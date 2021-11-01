@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import ask from '../src/cli.js';
+import ask from '../games/cli.js';
 
 ask();
