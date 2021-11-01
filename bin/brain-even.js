@@ -1,4 +1,6 @@
 #!/usr/bin/env node
-import game from '../src/even.js';
+import * as even from '../games/even.js';
+import * as index from '../src/index.js';
 
-game();
+const userName = index.hello(even.rule);
+index.game(even.returnPair(), userName);
