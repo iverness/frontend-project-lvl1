@@ -9,3 +9,5 @@
 [![asciicast](https://asciinema.org/a/sNJWid6CUwqkUbHRXwM3YcOii.svg)](https://asciinema.org/a/sNJWid6CUwqkUbHRXwM3YcOii)
 ### GCD game: How to play
 [![asciicast](https://asciinema.org/a/65wGk6HN2fA1HVcnqHsUeolfa.svg)](https://asciinema.org/a/65wGk6HN2fA1HVcnqHsUeolfa)
+### Progression game: How to play
+[![asciicast](https://asciinema.org/a/ZmU7odYPuiOVDHFudLLUoMaiC.svg)](https://asciinema.org/a/ZmU7odYPuiOVDHFudLLUoMaiC)
