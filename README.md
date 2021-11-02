@@ -11,3 +11,5 @@
 [![asciicast](https://asciinema.org/a/65wGk6HN2fA1HVcnqHsUeolfa.svg)](https://asciinema.org/a/65wGk6HN2fA1HVcnqHsUeolfa)
 ### Progression game: How to play
 [![asciicast](https://asciinema.org/a/ZmU7odYPuiOVDHFudLLUoMaiC.svg)](https://asciinema.org/a/ZmU7odYPuiOVDHFudLLUoMaiC)
+### Is Prime game: How to play
+[![asciicast](https://asciinema.org/a/RPdA9TcIEekA2K4Au3doO8GCQ.svg)](https://asciinema.org/a/RPdA9TcIEekA2K4Au3doO8GCQ)
