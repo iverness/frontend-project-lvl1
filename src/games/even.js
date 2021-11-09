@@ -1,25 +1,18 @@
 import { cons } from '@hexlet/pairs';
+import getRandomInt from './random.js';
 
 export const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 export const yesAnswer = 'yes';
 export const noAnswer = 'no';
 
-export const getRandomInt = (max) => Math.floor(Math.random() * max);
-export const checkEven = (value) => {
-  if (value % 2 === 0) {
-    return yesAnswer;
-  }
-  return noAnswer;
-};
+const checkEven = (value) => value % 2 === 0;
 export const returnPair = () => {
-  let n = 0;
   const pairs = [];
-  while (n < 3) {
-    const question = getRandomInt(100);
-    const correct = checkEven(question);
+  for (let i = 0; i < 3; i += 1) {
+    const question = getRandomInt(0, 100);
+    const correct = checkEven(question) ? 'yes' : 'no';
     const pair = cons(question, correct);
     pairs.push(pair);
-    n += 1;
   }
   return pairs;
 };

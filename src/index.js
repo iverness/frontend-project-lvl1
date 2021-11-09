@@ -3,31 +3,29 @@ import {
   car, cdr,
 } from '@hexlet/pairs';
 
-export const hello = (rule) => {
+const numberOfGames = 3;
+const hello = () => {
   console.log('Welcome to the Brain Games!');
   const userName = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${userName}!`);
-  console.log(`${rule}`);
   return userName;
 };
 
-export const game = (pairs, userName) => {
-  let counter = 0;
-  while (counter < 3) {
-    const pair = pairs[counter];
+const game = (rule, pairs) => {
+  const name = hello();
+  console.log(`${rule}`);
+  for (let i = 0; i < numberOfGames; i += 1) {
+    const pair = pairs[i];
     console.log(`Question: ${car(pair)}`);
     const answer = readlineSync.question('Answer: ');
-    if (answer === cdr(pair)) {
-      console.log('Correct!');
-      counter += 1;
-    } else {
-      console.log(`${answer} is wrong answer ;(. Correct answer was ${cdr(pair)}. 
-                Let's try again, ${userName}!`);
-      break;
+    if (answer !== cdr(pair)) {
+      console.log(`${answer} is wrong answer ;(. Correct answer was ${cdr(pair)}.
+        Let's try again, ${name}!`);
+      return;
     }
+    console.log('Correct!');
   }
-
-  if (counter === 3) {
-    console.log(`Congratulations, ${userName}!`);
-  }
+  console.log(`Congratulations, ${name}!`);
 };
+
+export default game;

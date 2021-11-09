@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import * as index from '../src/index.js';
-import * as progression from '../games/progression.js';
+import game from '../src/index.js';
+import { returnPair, rule } from '../src/games/progression.js';
 
-const userName = index.hello(progression.rule);
-index.game(progression.returnPair(), userName);
+game(rule, returnPair());

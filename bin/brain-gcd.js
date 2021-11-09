@@ -1,7 +1,6 @@
 #!/usr/bin/env node
 
-import * as index from '../src/index.js';
-import * as gcd from '../games/gcd.js';
+import game from '../src/index.js';
+import { returnPair, rule } from '../src/games/gcd.js';
 
-const userName = index.hello(gcd.rule);
-index.game(gcd.returnPair(), userName);
+game(rule, returnPair());
