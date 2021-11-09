@@ -12,8 +12,8 @@ const checkGcd = (n, m) => {
 export const returnPair = () => {
   const pairs = [];
   for (let i = 0; i < 3; i += 1) {
-    const firstNumber = getRandomInt(10);
-    const secondNumber = getRandomInt(10);
+    const firstNumber = getRandomInt(0, 10);
+    const secondNumber = getRandomInt(0, 10);
     const question = `${firstNumber} ${secondNumber}`;
     const correct = String(checkGcd(firstNumber, secondNumber));
     const pair = cons(question, correct);
