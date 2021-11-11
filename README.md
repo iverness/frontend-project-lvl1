@@ -14,7 +14,7 @@ $ npm link
 ```
 $ brain-even
 ```
-### HGameplay
+### Gameplay
 [![asciicast](https://asciinema.org/a/7tSVeyyqdKCIigxO85P7Xrksb.svg)](https://asciinema.org/a/7tSVeyyqdKCIigxO85P7Xrksb)
 ## Calc game:
 ```
