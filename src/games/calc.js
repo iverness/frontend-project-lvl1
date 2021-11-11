@@ -1,37 +1,33 @@
 import { cons } from '@hexlet/pairs';
-import getRandomInt from './random.js';
+import getRandomInt from '../lib/getRandomInt.js';
+import { numberOfGames } from '../index.js';
 
-export const rule = 'What is the result of the expression?';
 const signs = ['+', '-', '*'];
-const check = (n, i, m) => {
-  let correctResult = 0;
-  switch (i) {
-    case 0:
-      correctResult = n + m;
-      break;
-    case 1:
-      correctResult = n - m;
-      break;
-    case 2:
-      correctResult = n * m;
-      break;
-    default:
-      correctResult = undefined;
-      break;
-  }
-  return correctResult;
-};
+const rule = 'What is the result of the expression?';
 
-export const returnPair = () => {
+const check = (n, m, operation) => {
+  switch (operation) {
+    case '+':
+      return n + m;
+    case '-':
+      return n - m;
+    case '*':
+      return n * m;
+    default:
+      return undefined;
+  }
+};
+const returnPair = () => {
   const pairs = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numberOfGames; i += 1) {
     const firstNumber = getRandomInt(0, 10);
     const secondNumber = getRandomInt(0, 10);
-    const index = getRandomInt(0, 3);
+    const index = getRandomInt(0, signs.length);
     const question = `${firstNumber} ${signs[index]} ${secondNumber}`;
-    const correct = String(check(firstNumber, index, secondNumber));
+    const correct = String(check(firstNumber, secondNumber, signs[index]));
     const pair = cons(question, correct);
     pairs.push(pair);
   }
   return pairs;
 };
+export default { rule, returnPair };

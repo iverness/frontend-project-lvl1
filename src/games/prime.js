@@ -1,7 +1,8 @@
 import { cons } from '@hexlet/pairs';
-import getRandomInt from './random.js';
+import getRandomInt from '../lib/getRandomInt.js';
+import { numberOfGames } from '../index.js';
 
-export const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
+const rule = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 const checkPrime = (num) => {
   for (let i = 2, s = Math.sqrt(num); i <= s; i += 1) {
@@ -9,9 +10,9 @@ const checkPrime = (num) => {
   }
   return true;
 };
-export const returnPair = () => {
+const returnPair = () => {
   const pairs = [];
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < numberOfGames; i += 1) {
     const question = getRandomInt(1, 100);
     const correct = checkPrime(question) ? 'yes' : 'no';
     const pair = cons(question, correct);
@@ -19,3 +20,4 @@ export const returnPair = () => {
   }
   return pairs;
 };
+export default { rule, returnPair };
