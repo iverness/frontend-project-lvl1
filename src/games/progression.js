@@ -1,30 +1,31 @@
 import { cons } from '@hexlet/pairs';
 import getRandomInt from '../lib/getRandomInt.js';
-import { numberOfGames } from '../index.js';
+import { numberOfRounds } from '../index.js';
 
 const rule = 'What number is missing in the progression?';
 
 const makeProg = (start, step) => {
   const prog = [];
-  for (let i = 0; i <= getRandomInt(5, 10); i += 1) {
+  const length = getRandomInt(5, 10);
+  for (let i = 0; i <= length; i += 1) {
     const val = start + i * step;
     prog.push(val);
   }
   return prog;
 };
-const returnPair = () => {
-  const pairs = [];
-  for (let i = 0; i < numberOfGames; i += 1) {
+const getRoundsData = () => {
+  const roundsData = [];
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const number = getRandomInt(1, 100);
     const step = getRandomInt(1, 6);
     const progressions = makeProg(number, step);
     const index = getRandomInt(1, progressions.length);
-    const correct = String(progressions[index]);
+    const correctResult = String(progressions[index]);
     progressions[index] = '..';
     const question = progressions.join(' ');
-    const pair = cons(question, correct);
-    pairs.push(pair);
+    const data = cons(question, correctResult);
+    roundsData.push(data);
   }
-  return pairs;
+  return roundsData;
 };
-export default { rule, returnPair };
+export default { rule, getRoundsData };

@@ -1,6 +1,6 @@
 import { cons } from '@hexlet/pairs';
 import getRandomInt from '../lib/getRandomInt.js';
-import { numberOfGames } from '../index.js';
+import { numberOfRounds } from '../index.js';
 
 const signs = ['+', '-', '*'];
 const rule = 'What is the result of the expression?';
@@ -17,17 +17,17 @@ const check = (n, m, operation) => {
       return undefined;
   }
 };
-const returnPair = () => {
-  const pairs = [];
-  for (let i = 0; i < numberOfGames; i += 1) {
+const getRoundsData = () => {
+  const roundsData = [];
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const firstNumber = getRandomInt(0, 10);
     const secondNumber = getRandomInt(0, 10);
     const index = getRandomInt(0, signs.length);
     const question = `${firstNumber} ${signs[index]} ${secondNumber}`;
-    const correct = String(check(firstNumber, secondNumber, signs[index]));
-    const pair = cons(question, correct);
-    pairs.push(pair);
+    const correctResult = String(check(firstNumber, secondNumber, signs[index]));
+    const data = cons(question, correctResult);
+    roundsData.push(data);
   }
-  return pairs;
+  return roundsData;
 };
-export default { rule, returnPair };
+export default { rule, getRoundsData };

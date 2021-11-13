@@ -1,20 +1,20 @@
 import { cons } from '@hexlet/pairs';
 import getRandomInt from '../lib/getRandomInt.js';
-import { numberOfGames } from '../index.js';
+import { numberOfRounds } from '../index.js';
 
 const rule = 'Answer "yes" if the number is even, otherwise answer "no".';
 
 const checkEven = (value) => value % 2 === 0;
 
-const returnPair = () => {
-  const pairs = [];
-  for (let i = 0; i < numberOfGames; i += 1) {
+const getRoundsData = () => {
+  const roundsData = [];
+  for (let i = 0; i < numberOfRounds; i += 1) {
     const question = getRandomInt(0, 100);
-    const correct = checkEven(question) ? 'yes' : 'no';
-    const pair = cons(question, correct);
-    pairs.push(pair);
+    const correctResult = checkEven(question) ? 'yes' : 'no';
+    const data = cons(question, correctResult);
+    roundsData.push(data);
   }
-  return pairs;
+  return roundsData;
 };
 
-export default { rule, returnPair };
+export default { rule, getRoundsData };
